@@ -1,5 +1,6 @@
 import testimonials from "./testimonials";
 import TestimonialCards from "./TestimonialCards";
+
 function App() {
   const testimonialsDetails = testimonials.map((testimonial, idx) => (
     <TestimonialCards key={idx} testimonial={testimonial} />
