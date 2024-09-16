@@ -4,9 +4,9 @@ const TestimonialCards = (props) => {
   const { testimonial } = props;
   console.log(testimonial);
   return (
-    <div className="flex flex-col w-64 m-2">
+    <div className="flex flex-col w-64 m-2 ">
       <div className="flex flex-col bg-gradient-to-r from-orange-400 to-red-500 items-center rounded-t-lg">
-        <img src={testimonial.portrait} className="w-20" />
+        <img src={testimonial.portrait} className="w-24" />
         <div className="text-white text-xl">{testimonial.name}</div>
       </div>
       <div className="flex flex-col items-center border border-neutral-300 px-4 py-6 rounded-b-lg">
