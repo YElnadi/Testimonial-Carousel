@@ -16,7 +16,7 @@ function App() {
   const buttons = [];
   for(let i = 0; i < numPages; i += 1) {
     buttons.push(
-      <button key={i} onClick={() => setPageIdx(i)} className="bg-gray-300 text-white rounded-sm m-1 w-4">{i}</button>
+      <button key={i} onClick={() => setPageIdx(i)} className="bg-gray-300 text-white rounded-sm m-1 w-4">{i+1}</button>
     );
   }
   return (
