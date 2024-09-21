@@ -3,6 +3,8 @@ import TestimonialCards from "./TestimonialCarousel/TestimonialCards";
 import TestimonialCarousel from "./TestimonialCarousel";
 import posts from "./posts";
 import PostItem from "./Pagination/PostItem";
+import restuarants from "./resturants";
+import RestuarantCard from "./MunchCentral/RestuarantCard";
 import { useState } from "react";
 
 const PAGE_SIZE = 9;
@@ -14,11 +16,21 @@ function App() {
 
   const numPages = Math.ceil(posts.length / PAGE_SIZE);
   const buttons = [];
-  for(let i = 0; i < numPages; i += 1) {
+  for (let i = 0; i < numPages; i += 1) {
     buttons.push(
-      <button key={i} onClick={() => setPageIdx(i)} className="bg-gray-300 text-white rounded-sm m-1 w-4">{i+1}</button>
+      <button
+        key={i}
+        onClick={() => setPageIdx(i)}
+        className="bg-gray-300 text-white rounded-sm m-1 w-4"
+      >
+        {i + 1}
+      </button>
     );
   }
+
+  const resturantsDetails = restuarants.map((restuarant, idx) => (
+    <RestuarantCard key={idx} restuarant={restuarant} />
+  ));
   return (
     //testmonial carousel app
     // <div className="flex justify-center">
@@ -31,11 +43,23 @@ function App() {
     // </div>
 
     //pagination
-    <div className="flex flex-col justify-center items-center py-20">
-      <div className="w-full max-w-4xl flex justify-center flex-wrap">
-        {postItems}
+    // <div className="flex flex-col justify-center items-center py-20">
+    //   <div className="w-full max-w-4xl flex justify-center flex-wrap">
+    //     {postItems}
+    //   </div>
+    //   <div>{buttons}</div>
+    // </div>
+
+    //Munch central
+    <div className="flex flex-col items-center border-8 border-red-500 ">
+      <div className="flex text-3xl m-6 items-center px-2">
+        <img src="https://static-task-assets.react-formula.com/996965.png" className="w-16 m-2" />
+        Munch Central
       </div>
-      <div>{buttons}</div>
+
+      <div className="flex justify-center border-8 border-black w-full max-w-4xl flex-wrap ">
+        {resturantsDetails}
+      </div>
     </div>
   );
 }
