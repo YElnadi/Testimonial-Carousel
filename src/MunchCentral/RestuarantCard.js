@@ -16,7 +16,7 @@ const RestuarantCard = (props) => {
           <div className="text-red-500"> <i className="fa-solid fa-star mr-1"></i>{restuarant.rating}</div>
         </div>
 
-        <div className="text-xl">{restuarant.location}</div>
+        <div className="text-xl color-zing-500">{restuarant.location}</div>
         <div>{"$".repeat(restuarant.cost)}</div>
       </div>
     </div>
