@@ -25,3 +25,5 @@ const RestuarantCard = (props) => {
 };
 
 export default RestuarantCard;
+
+s = 'hello world'
